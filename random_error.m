@@ -1,6 +1,6 @@
 % function returns array with errors at random positions
 % bits_array arg should be array with int values 0 or 1
-% error_prob arg should be int value between range 0-1
+% error_prob arg should be real number between range 0-1
 function error_array = random_error ( bits_array, error_prob )
 	error_array = [];
 	for bit = bits_array

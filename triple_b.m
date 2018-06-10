@@ -20,3 +20,25 @@ function triple_bits_array = triple_bits( bits_array )
 	endfor
 	return;
 endfunction
+
+% function decodes tripled bits array
+function decoded_array = decode_bits( bits_array )
+	element = 0;
+	count = 0;
+	decoded_array = [];
+	for bit = bits_array
+		if ( bit == 0 )
+			element += 1;
+		endif
+		if ( mod(count, 3) == 2 )
+			if ( element > 1 )
+				decoded_array(end+1) = 0;
+			else
+				decoded_array(end+1) = 1;
+			endif
+			element = 0;
+		endif
+		count += 1;
+	endfor
+	return;
+endfunction
